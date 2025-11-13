@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Orgánico Artesanal La Trinidad - Fusagasugá</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Para iconos -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4 0%, #e8d5b7 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+        nav {
+            background-color: #A0522D;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'); /* Imagen de plantación de café orgánico */
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about, .process, .products, .contact {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h2 {
+            color: #8B4513;
+            border-bottom: 3px solid #A0522D;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .about img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .process ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .process li {
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .process li:hover {
+            transform: translateY(-5px);
+        }
+        .process li img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .products ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .products li {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .products li:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .products li img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .products li strong {
+            color: #8B4513;
+            font-size: 1.3em;
+        }
+        .products li p {
+            margin: 10px 0;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .contact i {
+            margin-right: 10px;
+            color: #8B4513;
+        }
+        footer {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+        }
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .process ul {
+                flex-direction: column;
+            }
+            .process li {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-coffee"></i> Café Orgánico Artesanal La Trinidad</h1>
+        <p>El sabor puro de la naturaleza en cada grano, desde la vereda La Trinidad, Fusagasugá</p>
+    </header>
+    <nav>
+        <a href="#about"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
+        <a href="#process"><i class="fas fa-cogs"></i> Nuestro Proceso</a>
+        <a href="#products"><i class="fas fa-shopping-bag"></i> Productos y Precios</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contacto</a>
+    </nav>
+    <div class="hero">
+        <h1>Descubre el Café Orgánico Más Puro</h1>
+    </div>
+    <section id="about" class="about">
+        <h2>Sobre Nosotros</h2>
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Café orgánico en La Trinidad">
+        <p>En Café Orgánico Artesanal La Trinidad, ubicada en el corazón de la vereda La Trinidad en Fusagasugá, Cundinamarca, nos apasiona cultivar y procesar café de la más alta calidad. Nuestro compromiso con la agricultura orgánica significa que cada grano es cultivado sin pesticidas ni químicos sintéticos, respetando el equilibrio natural de la tierra y preservando el medio ambiente. Fundada por familias locales con décadas de experiencia, nuestra finca se encuentra en un entorno prístino, rodeado de montañas verdes y ríos cristalinos, lo que nos permite ofrecer un café que no solo es delicioso, sino también sostenible.</p>
+        <p>Creemos en la transparencia y la calidad. Nuestros granos rojos son cosechados a mano en su punto óptimo de madurez, asegurando un sabor rico, con notas de chocolate, nuez y un toque de acidez natural. Ven a visitarnos y siente la calidez de nuestra comunidad cafetera, donde cada taza cuenta una historia de dedicación y amor por la tierra. ¡Únete a nosotros en esta aventura orgánica y descubre por qué nuestro café es el favorito de los amantes del buen gusto!</p>
+    </section>
+    <section id="process" class="process">
+        <h2>Nuestro Proceso Artesanal</h2>
+        <p>Seguimos un método tradicional y meticuloso, desde la cosecha hasta el empaque, para garantizar que cada grano conserve su esencia orgánica y su sabor excepcional. Este proceso no solo resalta la pureza del café, sino que también apoya prácticas sostenibles que benefician a la comunidad y al planeta.</p>
+        <ul>
+            <li>
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cosecha de café rojo">
+                <strong>Cosecha:</strong> Recogemos manualmente los granos de café rojo maduros, seleccionando solo los mejores para asegurar frescura y calidad orgánica.
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Molienda de granos">
+                <strong>Molienda:</strong> Utilizamos molinos tradicionales para moler los granos frescos, liberando aromas naturales sin alterar su composición orgánica.
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Deseresado del café">
+                <strong>Deseresado:</strong> Eliminamos la pulpa y la cáscara con cuidado, obteniendo granos limpios listos para el siguiente paso, manteniendo su integridad orgánica.
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Procesamiento y empaque">
+                <strong>Procesamiento y Empaque:</strong> Secamos y tostamos a baja temperatura para realzar sabores, luego empacamos al vacío en presentaciones ecológicas, listas para llevar el café orgánico a tu hogar.
+            </li>
+        </ul>
+        <p>Este enfoque artesanal no solo produce un café superior, sino que también minimiza el impacto ambiental, promoviendo la biodiversidad y el bienestar de nuestros agricultores. ¡Prueba la diferencia en cada sorbo!</p>
+    </section>
+    <section id="products" class="products">
+        <h2>Productos y Precios</h2>
+        <p>Ofrecemos una selección exclusiva de cafés orgánicos no instantáneos, empacados con amor para preservar su frescura y sabor. Cada producto es una invitación a experimentar la riqueza de La Trinidad. Precios en pesos colombianos (COP), con envíos gratuitos en Fusagasugá para compras superiores a $50,000.</p>
+        <ul>
+            <li>
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Café en grano 500g">
+                <strong>Café en Grano Orgánico 500g:</strong> $28,000<br>
+                <p>Granos enteros premium, ideales para moler en casa y disfrutar de un aroma fresco. Notas de chocolate oscuro y nuez, cultivado orgánicamente.</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Café molido 500g">
+                <strong>Café Molido Orgánico 500g:</strong> $32,000<br>
+                <p>Molido fino para cafeteras tradicionales, con un perfil de sabor equilibrado y un toque de acidez natural. Perfecto para el desayuno diario.</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Café molido 1kg">
+                <strong>Café Molido Orgánico 1kg:</strong> $55,000<br>
+                <p>Presentación económica y versátil, ideal para familias o cafeterías. Sabor intenso con notas frutales, certificado 100% orgánico.</p>
+            </li>
+                        <!--
+<li>
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Café tostado especial 250g">
+                <strong>Café Tostado Especial Orgánico 250g:</strong> $20,000<br>
+                <p>Mezcla exclusiva de granos selectos, tostados lentamente para resaltar sabores de vainilla y caramelo. Una experiencia gourmet en cada taza.</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Paquete de regalo">
+                <strong>Paquete de Regalo Orgánico (500g Grano + 250g Molido):</strong> $45,000<br>
+                <p>El regalo perfecto para amantes del café. Incluye empaque personalizado y una nota de agradecimiento. ¡Haz feliz a alguien especial!</p>
+            </li>    -->
+        </ul>
+        <p>Para pedidos personalizados o mayoristas, contáctanos para ofertas especiales. Todos nuestros productos son libres de gluten y aditivos, enfocados en la salud y el bienestar.</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p><i class="fas fa-map-marker-alt"></i><strong>Ubicación:</strong> Vereda La Trinidad, Fusagasugá, Cundinamarca, Colombia. ¡Ven a nuestra finca y conoce el proceso en vivo!</p>
+        <p><i class="fas fa-phone"></i><strong>Teléfono:</strong> +57 300 5540236</p>
+        <p><i class="fas fa-envelope"></i><strong>Email:</strong> omaric65@gmail.com</p>
+        <p><i class="fas fa-clock"></i><strong>Horarios:</strong> Lunes a Sábado: 8:00 AM - 6:00 PM. Domingos: Citas previas para tours y degustaciones.</p>
+        <p>Ofrecemos degustaciones gratuitas, tours guiados por la finca y asesoría personalizada. ¡Contáctanos hoy y comienza tu viaje hacia el mejor café orgánico!</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Café Orgánico Artesanal La Trinidad. Todos los derechos reservados. Hecho con pasión por el café colombiano y el medio ambiente. <i class="fas fa-leaf"></i></p>
+    </footer>
+</body>
+</html>
